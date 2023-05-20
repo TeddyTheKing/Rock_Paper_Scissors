@@ -9,24 +9,25 @@ function getComputerChoice () {
         return "scissors";
     };
 };
-// console.log(getComputerChoice());
 
 // Function that plays 1 round of paper, rock, scissors
-function oneRound (par1, par2) {
-    if (par1 === par2) {
+function oneRound (playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
         return "Tie, let's play again!"
-    } else if (par1 === "rock" && par2 === "paper") {
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
         return "You lose, paper is the superior weapon against the rock for some reason";
-    } else if (par1 === "paper" && par2 === "scissors") {
-        return "You lose, scissors goes through paper like a sharp object";
-    } else if (par1 === "scissors" && par2 === "rock") {
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        return "You lose, scissors goes through paper like a sharp object going through paper.";
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
         return "You lose, why would you try to cut a rock?"
     } else {
         return "You win! You really are the master of the randomness!"
     }
 }
-
+// Parametres for oneRound function
 const computerSelection = getComputerChoice();
 const playerSelection = prompt("Rock, Paper or Scissors? Your choice: ").toLowerCase();
 
+console.log(playerSelection);
+console.log(computerSelection);
 console.log(oneRound(playerSelection, computerSelection));
