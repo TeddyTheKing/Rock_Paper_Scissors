@@ -1,33 +1,76 @@
-// Rock, paper, scissors choice through random number
-function getComputerChoice () {
-    let randomNumber =  Math.floor(Math.random() * 3) + 1;
-    if (randomNumber === 1) {
-        return "rock";
-    } else if (randomNumber === 2) {
-        return "paper";
-    } else {
-        return "scissors";
+    // Computer choice by random number
+    function getComputerChoice () {
+        let randomNumber =  Math.floor(Math.random() * 3) + 1;
+        if (randomNumber === 1) {
+            return "rock";
+        } else if (randomNumber === 2) {
+            return "paper";
+        } else {
+            return "scissors";
+        };
     };
-};
-
-// Function that plays 1 round of paper, rock, scissors
-function oneRound (playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-        return "Tie, let's play again!"
-    } else if (playerSelection === "rock" && computerSelection === "paper") {
-        return "You lose, paper is the superior weapon against the rock for some reason";
-    } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        return "You lose, scissors goes through paper like a sharp object going through paper.";
-    } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return "You lose, why would you try to cut a rock?"
-    } else {
-        return "You win! You really are the master of the randomness!"
+// Player choice by prompt
+    function getPlayerSelection () {
+        const playerSelection = prompt("Rock, Paper or Scissors? Your choice: ").toLowerCase();
+        return playerSelection;
     }
-}
-// Parametres for oneRound function
-const computerSelection = getComputerChoice();
-const playerSelection = prompt("Rock, Paper or Scissors? Your choice: ").toLowerCase();
 
-console.log(playerSelection);
-console.log(computerSelection);
-console.log(oneRound(playerSelection, computerSelection));
+// Function for the gameplay
+function game () {
+
+// Parametres for oneRound function
+    const playerSelection = getPlayerSelection();
+    const computerSelection = getComputerChoice();
+// Function that plays 1 round of paper, rock, scissors
+    function oneRound (playerSelection, computerSelection) {
+        if (playerSelection === computerSelection) {
+            return 0;
+        } else if (playerSelection === "rock" && computerSelection === "paper") {
+            return 1;
+        } else if (playerSelection === "paper" && computerSelection === "scissors") {
+            return 1;
+        } else if (playerSelection === "scissors" && computerSelection === "rock") {
+            return 1;
+        } else {
+            return 2;
+        }
+    }
+
+    return oneRound();
+
+    /*function scoreKeeper (oneRound) {
+        if (oneRound === 1) {
+            ++compCounter;
+        } else if (oneRound === 2) {
+            ++userCounter;
+        } else {
+            // Do nothing
+        };
+    }
+
+    scoreKeeper();
+
+    let userCounter = 0;
+    let compCounter = 0;
+
+    console.log("The computer score is: " + compCounter);
+    console.log("The user score is: " + userCounter);
+
+    for (let i = 0; compCounter < 6 || userCounter < 6; i++) {
+        oneRound(playerSelection, computerSelection);
+    };
+
+    if (compCounter === 5) {
+        console.log("Computer wins!");
+    } else if (userCounter === 5) {
+        console.log("You won!")
+    }*/
+
+}   
+
+console.log(game());
+
+// Results check
+// console.log(playerSelection);
+// console.log(computerSelection);
+// console.log(oneRound(playerSelection, computerSelection));
