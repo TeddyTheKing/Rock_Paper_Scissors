@@ -16,7 +16,7 @@
     }
 
 // Function for the gameplay
-function game () {
+//function game () {
 
 // Parametres for oneRound function
     const playerSelection = getPlayerSelection();
@@ -36,23 +36,12 @@ function game () {
         }
     }
 
-    return oneRound();
+    //return oneRound(playerSelection, computerSelection);
 
-    /*function scoreKeeper (oneRound) {
-        if (oneRound === 1) {
-            ++compCounter;
-        } else if (oneRound === 2) {
-            ++userCounter;
-        } else {
-            // Do nothing
-        };
-    }
+    //console.log(scoreKeeper());
 
-    scoreKeeper();
 
-    let userCounter = 0;
-    let compCounter = 0;
-
+    /*
     console.log("The computer score is: " + compCounter);
     console.log("The user score is: " + userCounter);
 
@@ -66,11 +55,27 @@ function game () {
         console.log("You won!")
     }*/
 
-}   
+//}   
+oneRound(playerSelection, computerSelection);
+//function scoreKeeper (oneRound) {
+    let userCounter = 0;
+    let compCounter = 0;
 
-console.log(game());
+    if (oneRound() === 1) {
+        ++compCounter;
+    } else if (oneRound() === 2) {
+        ++userCounter;
+    } else {
+        // Do nothing
+    };
 
+    console.log(userCounter);
+    console.log(compCounter);
+//}
+
+//console.log(game());
+//console.log(scoreKeeper());
 // Results check
 // console.log(playerSelection);
 // console.log(computerSelection);
-// console.log(oneRound(playerSelection, computerSelection));
+console.log(oneRound(playerSelection, computerSelection));
