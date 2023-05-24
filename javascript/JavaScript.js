@@ -11,7 +11,7 @@
     };
 // Player choice by prompt
     function getPlayerSelection () {
-        const playerSelection = prompt("Rock, Paper or Scissors? Your choice: ").toLowerCase();
+        let playerSelection = prompt("Rock, Paper or Scissors? Your choice: ").toLowerCase();
         return playerSelection;
     }
 
@@ -36,11 +36,13 @@
         }
     }
 
-    //return oneRound(playerSelection, computerSelection);
-
     //console.log(scoreKeeper());
-
-
+    const oneR = oneRound(playerSelection, computerSelection);
+    if (oneR === 2) {
+        console.log("You win");
+    } else {
+        console.log("You did not win")
+    }
     /*
     console.log("The computer score is: " + compCounter);
     console.log("The user score is: " + userCounter);
@@ -56,26 +58,26 @@
     }*/
 
 //}   
-oneRound(playerSelection, computerSelection);
 //function scoreKeeper (oneRound) {
-    let userCounter = 0;
+   /* let userCounter = 0;
     let compCounter = 0;
 
-    if (oneRound() === 1) {
+    if (oneR === 1) {
         ++compCounter;
-    } else if (oneRound() === 2) {
+    } else if (oneR === 2) {
         ++userCounter;
     } else {
         // Do nothing
     };
 
     console.log(userCounter);
-    console.log(compCounter);
+    console.log(compCounter);*/
 //}
 
 //console.log(game());
 //console.log(scoreKeeper());
 // Results check
-// console.log(playerSelection);
-// console.log(computerSelection);
+console.log(playerSelection);
+console.log(computerSelection);
 console.log(oneRound(playerSelection, computerSelection));
+console.log(oneR);
