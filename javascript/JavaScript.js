@@ -38,11 +38,24 @@
 
     //console.log(scoreKeeper());
     const oneR = oneRound(playerSelection, computerSelection);
-    if (oneR === 2) {
-        console.log("You win");
-    } else {
-        console.log("You did not win")
-    }
+    
+    let compCounter = 0;
+    let userCounter = 0;
+
+    function Counter (oneR) {
+        if (oneR === 0) {
+            return "draw";
+        } else if (oneR === 1) {
+            compCounter++;
+            return compCounter;
+        } else {
+            userCounter++;
+            return userCounter;
+        };
+    };
+
+    console.log(Counter(oneR));
+
     /*
     console.log("The computer score is: " + compCounter);
     console.log("The user score is: " + userCounter);
@@ -69,9 +82,8 @@
     } else {
         // Do nothing
     };
+*/
 
-    console.log(userCounter);
-    console.log(compCounter);*/
 //}
 
 //console.log(game());
@@ -81,3 +93,5 @@ console.log(playerSelection);
 console.log(computerSelection);
 console.log(oneRound(playerSelection, computerSelection));
 console.log(oneR);
+console.log(userCounter);
+console.log(compCounter);
