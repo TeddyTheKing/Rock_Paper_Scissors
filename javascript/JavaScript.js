@@ -74,13 +74,16 @@
 
     //doWhile();
     // Endgame
-
-    /*if (compCounter = 5) {
-        console.log("Computer won!")
-    } else if (userCounter = 5) {
-        console.log("You've won!")
-    }*/
-    /*
+    function winDec(compCounter, userCounter) {
+        if (compCounter = 5) {
+            return "Computer won!"
+        } else if (userCounter = 5) {
+            return "You've won!"
+        } else {
+            return "Next round!"
+        }
+    };
+        /*
     console.log("The computer score is: " + compCounter);
     console.log("The user score is: " + userCounter);
 
