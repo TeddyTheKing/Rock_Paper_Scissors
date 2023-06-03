@@ -10,39 +10,55 @@
         };
     };
     // Player choice by prompt
-    function getPlayerSelection() {
+    /*function getPlayerSelection() {
         let playerSelection = prompt("Rock, Paper or Scissors? Your choice: ").toLowerCase();
         return playerSelection;
-    }
+    }*/
 
 // Function for the gameplay
 //function game () {
 
     // Parametres for oneRound function
-    const playerSelection = getPlayerSelection();
-    const computerSelection = getComputerChoice();
-    // Function that plays 1 round of paper, rock, scissors
-    function oneRound(playerSelection, computerSelection) {
-        if (playerSelection === computerSelection) {
-            return 0;
-        } else if (playerSelection === "rock" && computerSelection === "paper") {
-            return 1;
-        } else if (playerSelection === "paper" && computerSelection === "scissors") {
-            return 1;
-        } else if (playerSelection === "scissors" && computerSelection === "rock") {
-            return 1;
-        } else {
-            return 2;
-        }
-    }
+    //let playerSelection = prompt("Rock, Paper or Scissors? Your choice: ").toLowerCase();
+    //let computerSelection = getComputerChoice();
 
-    // Value of one round stored in variable
-    const oneR = oneRound(playerSelection, computerSelection);
     // Score counter
     let compCounter = 0;
     let userCounter = 0;
+    // Function that plays 1 round of paper, rock, scissors
+    function oneRound(playerSelection, computerSelection) {
+        if (playerSelection === computerSelection) {
+            console.log(`It's a draw. PlayerScore ${userCounter} : ComputerScore ${compCounter}`);
+        } else if (playerSelection === "rock" && computerSelection === "paper") {
+            console.log(`PlayerScore: ${userCounter} : ComputerScore ${++compCounter}`);
+        } else if (playerSelection === "paper" && computerSelection === "scissors") {
+            console.log(`PlayerScore: ${userCounter} : ComputerScore ${++compCounter}`);
+        } else if (playerSelection === "scissors" && computerSelection === "rock") {
+            console.log(`PlayerScore: ${userCounter} : ComputerScore ${++compCounter}`);
+        } else {
+            console.log(`PlayerScore: ${++userCounter} : ComputerScore ${compCounter}`);
+        }
+    }
 
-    function counter(oneR) {
+    function playRounds() {
+        for (let i = 0; i < 5; i++) {
+            let playerSelection = prompt("Rock, Paper or Scissors? Your choice: ").toLowerCase();
+            let computerSelection = getComputerChoice();
+            oneRound(playerSelection, computerSelection);
+            console.log(playerSelection);
+            console.log(computerSelection);
+        }
+    }
+
+    playRounds();
+
+    // Value of one round stored in variable
+    //const oneR = oneRound(playerSelection, computerSelection);
+    // Score counter
+    //let compCounter = 0;
+  //  let userCounter = 0;
+
+    /*function counter(oneR) {
         if (oneR === 0) {
             return "Draw";
         } else if (oneR === 1) {
@@ -52,9 +68,9 @@
             userCounter++;
             return userCounter;
         };
-    };
+    };*/
 
-    counter(oneR);
+    //counter(oneR);
 
     /*function forLoop(compCounter, userCounter) {
         if (compCounter < 6 && userCounter < 6) {
@@ -91,7 +107,7 @@
 //}
 
     // Gameover function
-    function gameOver() {
+    /*function gameOver() {
         if (compCounter === 5) {
             return "Computer won!"
         } else if (userCounter === 5) {
@@ -102,14 +118,14 @@
             oneRound(playerSelection, computerSelection);
             counter(oneR);
         }
-    }
+    }*/
 
 // Results check
-console.log(playerSelection);
+/*console.log(playerSelection);
 console.log(computerSelection);
-console.log(oneRound(playerSelection, computerSelection));
-console.log(oneR);
+//console.log(oneRound(playerSelection, computerSelection));
+//console.log(oneR);
 console.log(userCounter);
-console.log(compCounter);
+console.log(compCounter);*/
 
-gameOver();
+//gameOver();
