@@ -62,7 +62,7 @@
         }
     }*/
 
-    // Do while loop
+    // Do while loop try
     /*function doWhile() {
         do {
             getComputerChoice();
@@ -71,23 +71,12 @@
             counter(oneR);
         } while (compCounter < 6 && userCounter < 6);
     }*/
-
     //doWhile();
-    // Endgame
-    function winDec(compCounter, userCounter) {
-        if (compCounter = 5) {
-            return "Computer won!"
-        } else if (userCounter = 5) {
-            return "You've won!"
-        } else {
-            return "Next round!"
-        }
-    };
-        /*
-    console.log("The computer score is: " + compCounter);
-    console.log("The user score is: " + userCounter);
 
-    for (let i = 0; compCounter < 6 || userCounter < 6; i++) {
+
+
+// For loop try
+    /*for (let i = 0; compCounter < 6 || userCounter < 6; i++) {
         oneRound(playerSelection, computerSelection);
     };
 
@@ -101,7 +90,19 @@
 
 //}
 
-//console.log(game());
+    // Gameover function
+    function gameOver() {
+        if (compCounter === 5) {
+            return "Computer won!"
+        } else if (userCounter === 5) {
+            return "You've won!"
+        } else {
+            getComputerChoice();
+            getPlayerSelection();
+            oneRound(playerSelection, computerSelection);
+            counter(oneR);
+        }
+    }
 
 // Results check
 console.log(playerSelection);
@@ -110,3 +111,5 @@ console.log(oneRound(playerSelection, computerSelection));
 console.log(oneR);
 console.log(userCounter);
 console.log(compCounter);
+
+gameOver();
