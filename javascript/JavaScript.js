@@ -31,7 +31,7 @@ function oneRound(playerSelection, computerSelection) {
 
 // Frunction for playing the whole game
 function playRounds() {
-    do {
+    while (compCounter < 5 && userCounter < 5) {
         let playerSelection = prompt("Rock, Paper or Scissors? Your choice: ").toLowerCase();
         let computerSelection = getComputerChoice();
         oneRound(playerSelection, computerSelection);
@@ -41,7 +41,7 @@ function playRounds() {
             } else if (userCounter === 5) {
                 console.log("You've won!")
             };
-    } while (compCounter < 5 && userCounter < 5);
+    } ;
 };
 
 playRounds();
